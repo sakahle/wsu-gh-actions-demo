@@ -28,9 +28,6 @@ jobs:
         with:
           distribution: temurin
           java-version: 11
-      # Get ready for Gradle
-      - name: Setup Gradle
-        uses: gradle/gradle-build-action@v2
       # Run the command to build the application
       - name: Execute Gradle build
         run: |

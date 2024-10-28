@@ -50,8 +50,10 @@ jobs:
     # We need the build job to complete before we make an image, jobs run in parallel by default.
     needs: build
     steps:
-      # I don't think we need to check out the repo again
-#      - uses: actions/checkout@v3
+      - uses: actions/download-artifact@master
+        with:
+          name: job-dependencies
+          path: .
       # Get the docker CLI setup
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v2
